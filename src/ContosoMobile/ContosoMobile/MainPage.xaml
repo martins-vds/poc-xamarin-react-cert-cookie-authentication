@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:Helpers="clr-namespace:ContosoMobile.Helpers"
+             x:Class="ContosoMobile.MainPage">
+
+    <StackLayout>
+        <Button x:Name="loginButton" Text="Login" Clicked="LoginButton_Clicked" IsEnabled="{Binding IsAuthenticated, Converter={Helpers:InverseBoolConverter} }"/>
+        <Button x:Name="logoutButton" Text="Logout" Clicked="LogoutButton_Clicked" IsEnabled="{Binding IsAuthenticated}"/>
+        <WebView x:Name="webView" />
+        <Button x:Name="refreshButton" Text="Refresh" Clicked="RefreshButton_Clicked"/>
+    </StackLayout>
+
+</ContentPage>
